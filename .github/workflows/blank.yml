@@ -1,0 +1,10 @@
+name: Foo
+on:
+  issues:
+    types: [ "opened", "edited", "deleted", "transferred", "pinned", "unpinned", "closed", "reopened", "assigned", "unassigned", "labeled", "unlabeled", "locked", "unlocked", "milestoned", "demilestoned"]
+jobs:
+  bar:
+    runs-on: ["ubuntu-latest"]
+    steps:
+      - run: echo "event name is:" ${{ github.event_name }} 
+      - run: echo "event type is:" ${{ github.event.action }} 
